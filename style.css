@@ -1,0 +1,159 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.clock {
+    width: 310px;
+    height: 310px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 20px 10px rgba(0, 0, 0, .2);
+    transform: rotate(180deg);
+}
+
+.hr::before,
+.min::before,
+.sc::before {
+    content: "";
+    position: absolute;
+    transform: translate(-50%, 0);
+}
+
+.hr::before {
+    width: 8px;
+    height: 80px;
+    background-color: black;
+    z-index: 50;
+    border-radius: 6px;
+}
+
+.min::before {
+    width: 4px;
+    height: 100px;
+    /* background-color: black; */
+    background-color: #3d61ff;
+    z-index: 51;
+    border-radius: 6px;
+}
+
+.sc::before {
+    width: 2px;
+    height: 130px;
+    /* background-color: #3d61ff; */
+    background-color: #ff105e;
+    z-index: 52;
+    transform: translateY(-20px);
+    border-radius: 6px;
+}
+
+.center {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background-color: #ff105e;
+    border-radius: 50%;
+    z-index: 54;
+}
+
+.number {
+    position: absolute;
+    font-family: 'arial';
+    font-size: 30px;
+    color: black;
+    font-weight: bold;
+    transform: rotate(180deg);
+}
+
+.n12{
+    bottom: 10px; 
+    left: calc(50% - 12px);
+}
+
+.n3{
+    bottom: calc(50% - 16px); 
+    right: calc(310px - 28px);
+}
+
+.n6{
+    top: 10px; 
+    left: calc(50% - 10px);
+}
+
+.n9{
+    bottom: calc(50% - 16px); 
+    right: 14px;
+}
+
+.n12::after,
+.n12::before,
+.n3::after,
+.n3::before, 
+.n6::after,
+.n6::before,
+.n9::after,
+.n9::before{
+    content: "";
+    position: absolute;
+    background-color: black;
+    width: 3px;
+    height: 10px;
+}
+
+.n12::before {
+    left: -53px;
+    bottom: 0;
+    transform: rotate(-30deg);
+}
+
+.n12::after {
+    right: -54px;
+    bottom: 0;
+    transform: rotate(30deg);
+}
+
+.n3::before {
+    top: -53px;
+    left: -16px;
+    transform: rotate(60deg);
+}
+
+.n3::after {
+    bottom: -54px;
+    left: -16px;
+    transform: rotate(-60deg);
+}
+
+.n6::before {
+    left: -53px;
+    top: 0;
+    transform: rotate(30deg);
+}
+
+.n6::after {
+    right: -54px;
+    top: 0;
+    transform: rotate(-30deg);
+}
+
+.n9::before {
+    top: -53px;
+    right: -10px;
+    transform: rotate(-60deg);
+}
+
+.n9::after {
+    bottom: -54px;
+    right: -16px;
+    transform: rotate(60deg);
+}
